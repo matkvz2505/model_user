@@ -1,0 +1,6 @@
+{
+    "server": {
+        "port": 5000,
+        "database": "mongodb+srv://matkvz:K0HKCD9qd8nhCFYw@master.rrj0cix.mongodb.net/?retryWrites=true&w=majority/user_model"
+    }
+}
