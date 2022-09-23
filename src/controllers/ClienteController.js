@@ -1,4 +1,5 @@
 // Require
+const { default: axios } = require("axios");
 const ClienteModel = require("../models/ClienteModel");
 
 // Config Routes
@@ -53,5 +54,16 @@ exports.deleteCliente = async (req, res) => {
         res.status(200).send({mensagem: 'Cliente removido com sucesso'})
     } catch (err) {
         res.status(400).send({ mensagem: "putCliente - Erro ao atualizar o cliente" });
+    }
+}
+
+exports.showSite = async (req,res) => {
+    try {
+        const { data: ret } = await axios.get(
+            "https://www.cnbc.com/world/", null
+          );
+          res.status(200).send(ret);
+    } catch (err) {
+        res.status(400).send({ mensagem: "ERROR OF FIND SITE" });
     }
 }

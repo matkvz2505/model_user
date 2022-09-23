@@ -13,3 +13,13 @@ const ClienteSchema = mongoose.Schema(
 
 // export
 module.exports = mongoose.model('Cliente', ClienteSchema)
+
+/*
+            PARA O POSTMAN
+    {
+        "name": "Teste user",
+        "cpf": 123.123.123-00,
+        "idade": 22
+    }
+
+*/
