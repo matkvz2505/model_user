@@ -1,13 +1,21 @@
-// Require
+// require
 const express = require('express')
 const router = express.Router()
-const ClienteController = require('../controllers/ClienteController')
 
-// routes
-router.get('/api/getClientes', ClienteController.getAllClientes)
-router.get('/api/getCliente/:id', ClienteController.getClienteById)
-router.post('/api/postCliente', ClienteController.postCliente)
-router.put('/api/putCliente/:id', ClienteController.putCliente)
-router.delete('/api/removeCliente/:id', ClienteController.deleteCliente)
+router.get('/', (req, res) => {
+    res.render('pages/index')
+})
+
+router.get('/clientes', (req, res) => {
+    res.render('pages/clientes/index')
+})
+
+router.get('/clientes/adicionar', (req, res) => {
+    res.render('pages/clientes/adicionar')
+})
+
+router.get('/clientes/editar/:id', (req, res) => {
+    res.render('pages/clientes/editar')
+})
 
 module.exports = router
