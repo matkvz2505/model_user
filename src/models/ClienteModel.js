@@ -1,21 +1,23 @@
 // requires
-const mongoose = require("../database/db");
+const mongoose = require("mongoose");
 
 // create model schema
-const ClienteSchema = mongoose.Schema(
+const ClienteSchema = new mongoose.Schema(
     {
-        nome: { type: String, trim: true, require: true },
-        cpf: { type: String, trim: true, require: true },
-        idade: {type: Number}
+        name: { type: String, required: true },
+        cpf: { type: Number, required: true },
+        name: { type: Number, required: false}
     },
     { timestamps: true }
 );
 
 // export
-module.exports = mongoose.model('Cliente', ClienteSchema)
+const Cliente = mongoose.model('Cliente', ClienteSchema)
 
+module.exports = { 
+    Cliente,
+}
 /*
-            PARA O POSTMAN
     {
         "name": "Teste user",
         "cpf": 123.123.123-00,

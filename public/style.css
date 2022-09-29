@@ -1,0 +1,92 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.bg-navbar {
+	background-color: #436034;
+}
+
+.slider-title {
+	padding: 5px;
+	background-color: rgb(4,54,3,0.3);
+	width: 100%;
+	border-radius: 300px;
+}
+
+.title {
+	text-decoration: bold;
+	font-size: 47px;
+	color: #333;
+	text-align: center;
+}
+
+.espaco {
+	padding-top: 40px;
+}
+
+.separador {
+    content: "";
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: #436034;
+ 
+}
+
+.titulo-paragrafo {
+	text-align: left;
+	font-size: 30px;
+	text-decoration: bold;
+	color: black;
+}
+
+.texto-paragrafo {
+	text-align: justify;
+	font-size: 20px;
+}
+
+.backgroundcinza {
+	background-color: #eee;
+}
+
+.card-header {
+	background-color: #8bd068;
+	text-align: center;
+}
+.card-text {
+	text-align: justify;
+}
+
+.separacaodivs {
+	padding-top: 30px;
+	padding-bottom: 56px;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+  transition-delay: 1s;
+}
+
+.dropdown-item:focus {
+	background-color: #8bd068;
+}
+
+.list-group-item {
+	text-align: justify;
+}
+
+.
