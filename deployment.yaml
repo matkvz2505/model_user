@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adduser
+  namespace: adduser
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: adduser
+      labels:
+        app: adduser
+    spec:
+      containers:
+        - name: adduser
+          image: matkvz/add_user:v1
+          ports:
+            - containerPort: 8081
+  selector:
+    matchLabels:
+      app: adduser
