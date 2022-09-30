@@ -5,7 +5,6 @@ const cors = require("cors");
 const router = express.Router()
 const { MongoClient } = require('mongodb');
 const dotenv = require("dotenv").config()
-const path = require('path')
 
 const app = express();
 
@@ -17,28 +16,9 @@ const {
 } = env;
 
 async function main(){
-    /**
-        * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
-        * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
-        */
-    
     const client = new MongoClient(MONGO_URI);
-     
-    try {
-        // Connect to the MongoDB cluster
-        await client.connect();
-        console.log('DB ON')
-     
-        // Make the appropriate DB calls
-        // await listDatabases(client);
-     
-    } catch (e) {
-        console.error(e);
-    }
-}
-    
+    try {await client.connect();console.log('DB ON')} catch (e) {console.error(e);}}
 main().catch(console.error);
-
 
 // Middlewares
 
@@ -50,10 +30,8 @@ app.use(express.json());
 app.use(express.json({ type: "application/json" }));
 app.use(router);
 
-// ROUTES
-
 app.listen(PORT, () => {
-    console.log(`server is running on port ${PORT}. http://localhost:${PORT}`)
+    console.log(`server is running on port ${PORT}. http://localhost:${PORT}/`)
 })
 
 return app;

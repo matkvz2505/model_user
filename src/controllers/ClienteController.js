@@ -1,19 +1,10 @@
 // Require
 const { axios } = require("axios");
 const Cliente = require("../models/ClienteModel");
-const path = require('path')
 
 // Config Routes
 
 // Read All
-
-const getRoot = async (req, res) => {
-    try {
-        res.sendFile(__dirname + "/public/index.html")
-    } catch (error) {
-        return error
-    }
-}
 
 const getAllClientes = async (req, res) => {
     try {
@@ -26,20 +17,24 @@ const getAllClientes = async (req, res) => {
 
 const showSite = async (req,res) => {
     try {
-        const { data: ret } = await axios.get(
-            "https://www.cnbc.com/world/",
-          );
-          res.status(200).send(ret);
+        const ret = async (req, res) => {
+            const rett = "hello"
+            res.send(rett)
+        }
+        // const { data: ret } = await axios.get(
+        //     "https://www.cnbc.com/world/",
+        //   );
+        //   res.status(200).send(ret);
     } catch (err) {
         res.status(400).send({ mensagem: "ERROR OF FIND SITE" });
     }
+    return showSite
 }
 
 
 module.exports = {
     getAllClientes,
-    showSite,
-    getRoot
+    showSite
 };
 // // Read one by Id
 // exports.getClienteById = async (req, res) => {
